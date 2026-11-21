@@ -1,0 +1,375 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&family=Poppins:wght@300;400;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: #fff0f4;
+    color: #713b4c;
+    overflow-x: hidden;
+    text-align: center;
+}
+
+/* HERO SECTION */
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255, 192, 203, .8),
+            rgba(255, 105, 135, .65)
+        ),
+        radial-gradient(circle, #fff0f5, #ff9aaf);
+}
+
+.hero-content {
+    max-width: 750px;
+}
+
+.subtitle {
+    letter-spacing: 4px;
+    font-size: 12px;
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-size: clamp(35px, 7vw, 65px);
+    line-height: 1.2;
+    color: #fff;
+    text-shadow: 2px 3px 10px #d75a78;
+}
+
+.hero h1 span {
+    display: block;
+    font-family: 'Dancing Script', cursive;
+    color: #8e2345;
+}
+
+.intro {
+    color: #fff;
+    font-size: 16px;
+    margin: 25px auto;
+    max-width: 500px;
+    line-height: 1.8;
+}
+
+button {
+    background: #d63367;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 30px;
+    font-size: 15px;
+    cursor: pointer;
+    transition: .3s;
+    box-shadow: 0 5px 15px #d6336740;
+}
+
+button:hover {
+    transform: scale(1.08);
+    background: #a91d4b;
+}
+
+/* TIMER */
+
+.timer-section {
+    padding: 90px 20px;
+}
+
+h2 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 42px;
+    color: #c12c5b;
+    margin-bottom: 20px;
+}
+
+.timer {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 18px;
+    margin-top: 35px;
+}
+
+.timer div {
+    background: white;
+    width: 110px;
+    padding: 25px 10px;
+    border-radius: 18px;
+    box-shadow: 0 5px 20px #d6336720;
+}
+
+.timer h3 {
+    font-size: 32px;
+    color: #d63367;
+}
+
+.timer span {
+    font-size: 13px;
+}
+
+/* LOVE LETTER */
+
+.letter-section {
+    padding: 80px 20px;
+    background: #ffe0e9;
+}
+
+.envelope {
+    margin: 30px auto;
+    padding: 35px;
+    background: white;
+    max-width: 300px;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: 0 5px 20px #c12c5b30;
+    transition: .3s;
+}
+
+.envelope:hover {
+    transform: translateY(-8px);
+}
+
+.envelope-icon {
+    font-size: 70px;
+}
+
+.letter {
+    display: none;
+    background: #fffdf7;
+    max-width: 650px;
+    margin: 30px auto;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 5px 25px #00000015;
+    text-align: left;
+    line-height: 1.9;
+    animation: appear 1s ease;
+}
+
+.letter p {
+    margin: 15px 0;
+}
+
+.letter h2 {
+    text-align: center;
+    font-size: 35px;
+}
+
+.letter h3 {
+    text-align: center;
+    color: #d63367;
+}
+
+.signature {
+    text-align: right;
+    font-family: 'Dancing Script', cursive;
+    font-size: 25px;
+}
+
+
+/* MEMORIES COLLAGE */
+
+.memories {
+    padding: 90px 20px;
+    background: #fff0f4;
+}
+
+.gallery {
+    max-width: 1000px;
+    margin: 45px auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.photo {
+    background: white;
+    padding: 10px 10px 35px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px #d6336725;
+    transition: .3s ease;
+    position: relative;
+}
+
+.photo:nth-child(even) {
+    transform: rotate(2deg);
+}
+
+.photo:nth-child(odd) {
+    transform: rotate(-2deg);
+}
+
+.photo:hover {
+    transform: scale(1.06) rotate(0deg);
+    z-index: 2;
+}
+
+.photo img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    border-radius: 8px;
+    display: block;
+}
+
+.photo p {
+    margin-top: 12px;
+    font-family: 'Dancing Script', cursive;
+    font-size: 22px;
+    color: #c12c5b;
+}
+
+/* TABLET */
+
+@media (max-width: 800px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .photo img {
+        height: 210px;
+    }
+}
+
+/* MOBILE */
+
+@media (max-width: 500px) {
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
+
+    .photo {
+        padding: 7px 7px 30px;
+    }
+
+    .photo img {
+        height: 150px;
+    }
+
+    .photo p {
+        font-size: 17px;
+    }
+}
+
+/* SURPRISE */
+
+.surprise {
+    background: linear-gradient(135deg, #ffb6c8, #ff6f91);
+    padding: 100px 20px;
+    color: white;
+}
+
+.surprise h2 {
+    color: white;
+}
+
+.surprise p {
+    max-width: 550px;
+    margin: 20px auto 30px;
+    line-height: 1.8;
+}
+
+#surpriseMessage {
+    margin-top: 35px;
+    font-size: 32px;
+}
+
+/* MUSIC */
+
+.music-control {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 10;
+}
+
+.music-control button {
+    padding: 12px 18px;
+}
+
+/* FLOATING HEARTS */
+
+.heart {
+    position: fixed;
+    bottom: -30px;
+    color: #ff4f81;
+    font-size: 22px;
+    pointer-events: none;
+    animation: floatUp 6s linear forwards;
+    z-index: 20;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) rotate(0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-110vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* FOOTER */
+
+footer {
+    padding: 30px;
+    background: #842746;
+    color: white;
+}
+
+/* MOBILE RESPONSIVENESS */
+
+@media (max-width: 600px) {
+
+    .timer div {
+        width: 42%;
+    }
+
+    .letter {
+        padding: 25px;
+    }
+
+    h2 {
+        font-size: 34px;
+    }
+
+    .photo {
+        width: 90%;
+    }
+
+    .music-control {
+        bottom: 10px;
+        right: 10px;
+    }
+}
